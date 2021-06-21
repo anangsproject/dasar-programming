@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Latihan Sesi 2</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                background-color: #f6f7fc;
+                margin: 0;
+            }
+            .block-content {
+                background-color:cornflowerblue;
+                padding: 5px;
+                display: flex;
+                flex-basis: auto;
+                justify-content: flex-end;
+                flex-grow: 1;
+                align-items: center;
+                box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.5);
+            }
+            ul {
+                list-style-type: none;
+                margin:0;
+                padding:0;
+                overflow: hidden;
+                background-color: cornflowerblue;            
+            }
+            li {                
+                float: left;
+            }
+            li a {
+                display: block;
+                color: white;
+                background-color: cornflowerblue;
+                padding: 15px 30px;
+                text-align:center;
+                text-decoration: none;
+                font-family: Arial;
+            }
+            li a:hover {
+                background-color:blue;
+                color:white;
+                border-radius: 5px;
+            }
+            .row{
+                display: flex;
+                flex-direction: row;
+            }
+            .col{
+                flex: 1;
+            }
+            .new-profile{
+                border-radius: 5px;
+                background-color: rgb(214, 226, 248);
+                padding: 20px;
+                margin: 50px 30px 50px 30px;
+                font-family: Arial;
+                color: cornflowerblue;
+            }
+            #avatar {
+                width: 150px;
+                height: 150px;
+                border-radius: 75px;
+                object-fit: cover;
+                text-align: center;
+            }
+            #button-header-1{
+                width: 30%;
+                background-color:cornflowerblue;
+                color:white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor:pointer;
+            }
+            #button-header-1:hover {
+                background-color:blue;
+                color:white;
+                border-radius: 5px;
+            }
+            #button-header-2{
+                width: 30%;
+                background-color:white;
+                color:green;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: solid 1px green;
+                border-radius: 4px;
+                cursor:pointer;
+            }
+            #form-container {
+                border-radius: 5px;
+                background-color: rgb(214, 226, 248);
+                padding: 20px;
+                margin: 30px;
+                font-family: Arial;
+                color: cornflowerblue;
+            }
+            .hidden-form{
+                display:none;
+            }
+            .input-form{
+                width:100%;
+                padding: 12px 20px;
+                margin: 10px 0;
+                display: inline-block;
+                border: 1px solid rgb(197, 191, 191);
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            .btn {
+                width: 100%;
+                background-color:cornflowerblue;
+                color:white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor:pointer;
+            }       
+        </style>
+    </head>
+    <body>
+        <div class="block-content">
+            <ul class="navbar">
+                <li class="nav-item"><a class="nav-link" href="latihan-off-sesi-1.html">HOME</a></li>
+                <li class="nav-item"><a class="nav-link" href="latihan-off-sesi-1.html">PRODUCT</a></li>
+                <li class="nav-item"><a class="nav-link" href="latihan-off-sesi-1.html">GALLERY</a></li>
+                <li class="nav-item"><a class="nav-link" href="latihan-off-sesi-1.html">BLOG</a></li>
+                <li class="nav-item"><a class="nav-link" href="latihan-off-sesi-1.html">INVENTORY</a></li>
+                <li class="nav-item"><a class="nav-link" href="latihan-off-sesi-1.html">CONTACT</a></li>
+            </ul>
+        </div>
+        <section class="new-profile row">
+            <div class="row col">
+                <div class="col" style="text-align: center;">
+                    <img id="avatar" src="https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/JQuery_logo-512.png">
+                </div>
+                <div class="col">
+                    <h2 id="in-nama">Nama Anda</h2>
+                    <p id="in-role">Front End Designer</p>
+                    <button id="button-header-1" onclick="showForm()">Edit</button>
+                    <button id="button-header-2">Resume</button>
+                </div>
+            </div>
+            <div class="row col">
+                <div class="col" style="color: cornflowerblue; font-weight: bold;">
+                    <p>Availability</p>
+                    <p>Usia</p>
+                    <p>Lokasi</p>
+                    <p>Pengalaman</p>
+                    <p>Email</p>
+                </div>
+                <div class="col profile-4" style="color: cornflowerblue;">
+                    <p id="in-availability">Full Time</p>
+                    <p id="in-usia">19</p>
+                    <p id="in-lokasi">Jakarta, Indonesia</p>
+                    <p id="in-experience">2</p>
+                    <p id="in-email">developer@gmail.com</p>
+                </div>
+            </div>
+        </section>
+                
+        <div class="hidden-form" id="form-container">
+            <form action="#" method="#">
+                <div>
+                    <label class="label-form">Nama</label>
+                    <input id="input-nama" class="input-form" type="nama" placeholder="masukkan nama anda">
+                </div>
+                <div>
+                    <label class="label-form">Role</label>
+                    <input id="input-role" class="input-form" type="text">
+                </div>
+                <div>
+                    <label class="label-form">Availability</label>
+                    <input id="input-availability" class="input-form" type="text">
+                </div>
+                <div>
+                    <label class="label-form">Usia</label>
+                    <input id="input-usia" class="input-form" type="number">
+                </div>
+                <div>
+                    <label class="label-form">Lokasi</label>
+                    <input id="input-lokasi" class="input-form" type="text">
+                </div>
+                <div>
+                    <label class="label-form">Years Experience</label>
+                    <input id="input-experience" class="input-form" type="number">
+                </div>
+                <div>
+                    <label class="label-form">Email</label>
+                    <input id="input-email" class="input-form" type="email">
+                </div>
+                <div>
+                    <button class="btn" type="submit" value="Submit" onclick="submitForm()">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <script>
+            function showForm(){
+                var x = document.getElementById("form-container")
+                x.classList.remove("hidden-form")
+
+                var a = document.getElementById("in-nama").innerText
+                document.getElementById("input-nama").value = a
+
+                var b = document.getElementById("in-role").innerText
+                document.getElementById("input-role").value = b
+
+                var c = document.getElementById("in-availability").innerText
+                document.getElementById("input-availability").value = c
+
+                var d = document.getElementById("in-usia").innerText
+                document.getElementById("input-usia").value = d
+
+                var e = document.getElementById("in-lokasi").innerText
+                document.getElementById("input-lokasi").value = e
+
+                var f = document.getElementById("in-experience").innerText
+                document.getElementById("input-experience").value = f
+
+                var g = document.getElementById("in-email").innerText
+                document.getElementById("input-email").value = g
+            }
+
+            function submitForm(){
+                var y = document.getElementById("form-container")
+                y.classList.add("hidden-form")
+
+                var ia = document.getElementById("input-nama").value
+                document.getElementById("in-nama").innerText = ia
+
+                var ib = document.getElementById("input-role").value
+                document.getElementById("in-role").innerText = ib
+
+                var ic = document.getElementById("input-availability").value
+                document.getElementById("in-availability").innerText = ic
+
+                var id = document.getElementById("input-usia").value
+                document.getElementById("in-usia").innerText = id
+
+                var ie = document.getElementById("input-lokasi").value
+                document.getElementById("in-lokasi").innerText = ie
+
+                var iff = document.getElementById("input-experience").value
+                document.getElementById("in-experience").innerText = iff
+
+                var ig = document.getElementById("input-email").value
+                document.getElementById("in-email").innerText = ig
+            }
+            
+        </script>
+    </body>
+</html>
